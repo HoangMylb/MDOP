@@ -1,0 +1,40 @@
+/* [project]/app/harden-a11y.css [app-client] (css) */
+.main-content-start {
+  scroll-margin-top: calc(5rem + env(safe-area-inset-top));
+  outline: none;
+}
+
+.main-content-start:focus {
+  outline: 2px solid var(--red);
+  outline-offset: -4px;
+}
+
+.finder-question {
+  border: 0;
+  min-inline-size: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.finder-question legend {
+  max-inline-size: 24ch;
+  margin: 0 0 var(--space-3);
+  font-family: var(--font-display);
+  letter-spacing: -.03em;
+  padding: 0;
+  font-size: clamp(1.75rem, 2.4vw, 2.35rem);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+@media (max-width: 850px) {
+  .main-content-start {
+    scroll-margin-top: calc(4.5rem + env(safe-area-inset-top));
+  }
+
+  .finder-question legend {
+    max-inline-size: 18ch;
+  }
+}
+
+/*# sourceMappingURL=app_harden-a11y_css_1igg3k2._.single.css.map*/

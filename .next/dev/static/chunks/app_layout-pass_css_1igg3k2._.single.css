@@ -1,0 +1,401 @@
+/* [project]/app/layout-pass.css [app-client] (css) */
+:root {
+  --gutter: clamp(1.25rem,4vw,5rem);
+  --content-wide: 1440px;
+  --content-reading: 1120px;
+  --space-2: clamp(.75rem,1vw,1rem);
+  --space-3: clamp(1rem,1.5vw,1.5rem);
+  --space-5: clamp(1.5rem,2.5vw,2.75rem);
+  --space-7: clamp(3.5rem,7vw,8rem);
+}
+
+.hero {
+  height: min(52rem, 100svh);
+  min-height: clamp(42rem, 58vw, 52rem);
+}
+
+.hero-panel {
+  margin-inline-start: max(var(--gutter),calc((100vw - var(--content-wide))/2 + var(--gutter)));
+  margin-top: clamp(7.5rem, 11vw, 10rem);
+}
+
+.hero-panel .hero-actions {
+  margin-top: var(--space-5);
+}
+
+.hero-panel .utility-link {
+  margin-top: var(--space-3);
+}
+
+.families, .inventory {
+  padding-inline: var(--gutter);
+}
+
+.families {
+  padding-block: var(--space-7) var(--space-5);
+}
+
+.section-intro {
+  max-width: var(--content-wide);
+  margin-inline: auto;
+  grid-template-columns: minmax(9rem, 1fr) minmax(24rem, 2.1fr) minmax(13rem, .9fr);
+  column-gap: clamp(1.5rem, 4vw, 5rem);
+  margin-bottom: clamp(2.75rem, 6vw, 5.5rem);
+}
+
+.section-intro > p:last-child {
+  align-self: end;
+  margin-bottom: .45rem;
+}
+
+.family-index {
+  max-width: var(--content-wide);
+  align-items: end;
+  margin-inline: auto;
+}
+
+.family {
+  min-height: clamp(22rem, 31vw, 30rem);
+}
+
+.family:nth-child(2n) {
+  min-height: clamp(19rem, 27vw, 26rem);
+  margin-top: clamp(2.5rem, 5vw, 5.5rem);
+}
+
+.family-copy {
+  padding: var(--space-3);
+}
+
+.family-copy > span {
+  margin-bottom: var(--space-2);
+  display: block;
+}
+
+.family-copy h3 {
+  margin-block: 0 var(--space-2);
+}
+
+.family-copy p {
+  margin-bottom: .25rem;
+}
+
+.family-copy small {
+  min-height: 2.25rem;
+}
+
+.family-copy a, .family-copy button {
+  margin-top: var(--space-2);
+}
+
+.data-note {
+  max-width: var(--content-wide);
+  margin: var(--space-3) auto 0;
+}
+
+.finder, .compare, .ownership, .proof {
+  padding-inline: var(--gutter);
+}
+
+.finder {
+  padding-block: var(--space-7);
+  grid-template-columns: minmax(18rem, .9fr) minmax(30rem, 1.1fr);
+  align-items: start;
+  gap: clamp(3rem, 10vw, 10rem);
+}
+
+.finder-lead {
+  position: sticky;
+  top: 2rem;
+}
+
+.finder-tool {
+  max-width: 42rem;
+  padding-top: var(--space-3);
+}
+
+.finder-tool h3 {
+  margin-bottom: var(--space-3);
+}
+
+.progress {
+  margin-bottom: var(--space-5);
+}
+
+.answer-summary {
+  margin-bottom: var(--space-3);
+}
+
+.choice-list {
+  gap: var(--space-2);
+}
+
+.finder-recovery {
+  margin-top: var(--space-3);
+}
+
+.featured {
+  height: clamp(38rem, 50vw, 48rem);
+}
+
+.feature-card {
+  max-width: 31rem;
+  padding: clamp(2rem, 5vw, 5rem) clamp(2rem, 5vw, 5rem) clamp(3.5rem, 7vw, 6.5rem);
+}
+
+.attributes {
+  margin: var(--space-5) 0;
+}
+
+.feature-card .hero-actions {
+  gap: var(--space-3);
+}
+
+.compare {
+  padding-block: var(--space-7);
+  grid-template-columns: minmax(18rem, .85fr) minmax(25rem, 1.15fr);
+  align-items: end;
+  gap: clamp(3rem, 10vw, 10rem);
+}
+
+.compare > div:first-child {
+  max-width: 30rem;
+}
+
+.compare-tray {
+  justify-self: end;
+  width: 100%;
+  max-width: 36rem;
+}
+
+.compare-empty {
+  justify-self: end;
+  max-width: 30rem;
+  margin: 0;
+}
+
+.tray-label {
+  padding-bottom: var(--space-2);
+}
+
+.compare-tray .picked {
+  padding-block: var(--space-3);
+}
+
+.inventory {
+  padding-block: clamp(4.5rem, 9vw, 9rem);
+}
+
+.inventory-head, .inventory-note, .inventory-list {
+  max-width: var(--content-wide);
+  margin-inline: auto;
+}
+
+.inventory-head {
+  margin-bottom: var(--space-3);
+}
+
+.inventory-note {
+  margin-bottom: var(--space-5);
+}
+
+.inventory-list {
+  gap: clamp(.75rem, 1.5vw, 1.5rem);
+}
+
+.inventory-card {
+  grid-template-rows: auto 1fr;
+  display: grid;
+}
+
+.inventory-photo {
+  height: clamp(11rem, 14vw, 14rem);
+}
+
+.inventory-meta {
+  column-gap: var(--space-2);
+  padding: var(--space-3);
+  grid-template-columns: 1fr auto;
+  display: grid;
+}
+
+.inventory-meta h3, .inventory-meta p, .inventory-meta span {
+  grid-column: 1;
+}
+
+.inventory-meta a {
+  grid-area: 1 / 2 / span 3;
+  align-self: end;
+  min-width: 6rem;
+}
+
+.ownership {
+  padding-block: var(--space-7);
+  grid-template-columns: minmax(18rem, .8fr) minmax(32rem, 1.2fr);
+  align-items: start;
+  gap: clamp(3rem, 10vw, 11rem);
+}
+
+.ownership-title {
+  position: sticky;
+  top: 2rem;
+}
+
+.ownership-list {
+  justify-self: end;
+  width: 100%;
+  max-width: 42rem;
+}
+
+.ownership-list article {
+  padding-block: var(--space-3);
+}
+
+.proof {
+  grid-template-columns: minmax(22rem, 1.15fr) minmax(18rem, .85fr);
+  align-items: center;
+  gap: clamp(3rem, 9vw, 9rem);
+  padding-block: clamp(4.5rem, 8vw, 8rem);
+}
+
+.proof-visual {
+  height: clamp(17rem, 29vw, 25rem);
+}
+
+.proof > div:last-child {
+  max-width: 31rem;
+}
+
+.final-cta {
+  min-height: clamp(34rem, 44vw, 43rem);
+  padding-inline: max(var(--gutter),calc((100vw - var(--content-wide))/2 + var(--gutter)));
+  padding-block: var(--space-7);
+}
+
+.final-cta > div {
+  max-width: 38rem;
+}
+
+.final-cta .hero-actions {
+  margin-top: var(--space-5);
+}
+
+footer {
+  padding-inline: var(--gutter);
+}
+
+@media (max-width: 850px) {
+  :root {
+    --gutter: 1.25rem;
+    --space-7: 4.75rem;
+  }
+
+  .hero {
+    height: 92svh;
+    min-height: 44rem;
+  }
+
+  .hero-panel {
+    margin: 0 var(--gutter) 5.25rem;
+  }
+
+  .section-intro {
+    margin-bottom: 3rem;
+    display: block;
+  }
+
+  .section-intro > p:last-child {
+    max-width: 34ch;
+    margin-top: var(--space-3);
+  }
+
+  .family-index {
+    grid-template-columns: 1fr;
+    gap: 1px;
+    display: grid;
+  }
+
+  .family, .family:nth-child(2n) {
+    min-height: 19rem;
+    margin: 0;
+  }
+
+  .family-copy {
+    padding: 1.35rem;
+  }
+
+  .family-copy small {
+    min-height: 0;
+  }
+
+  .finder, .compare, .ownership, .proof {
+    padding-block: var(--space-7);
+    gap: 2.75rem;
+  }
+
+  .finder-lead, .ownership-title {
+    position: static;
+  }
+
+  .finder-tool {
+    max-width: none;
+  }
+
+  .progress {
+    margin-bottom: 2rem;
+  }
+
+  .featured {
+    height: 42rem;
+  }
+
+  .feature-card {
+    padding: 2rem var(--gutter) 4.5rem;
+  }
+
+  .compare-tray, .compare-empty {
+    justify-self: stretch;
+    max-width: none;
+  }
+
+  .inventory {
+    padding-block: var(--space-7);
+  }
+
+  .inventory-list {
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+  }
+
+  .inventory-card {
+    scroll-snap-align: start;
+    min-width: 82vw;
+  }
+
+  .inventory-photo {
+    height: 13.5rem;
+  }
+
+  .ownership-list {
+    justify-self: stretch;
+  }
+
+  .ownership-list article {
+    grid-template-columns: 2.5rem 1fr;
+  }
+
+  .proof-visual {
+    height: 15rem;
+  }
+
+  .final-cta {
+    min-height: 36rem;
+    padding: 5rem var(--gutter) 7rem;
+  }
+
+  .final-cta > div {
+    max-width: 32rem;
+  }
+}
+
+/*# sourceMappingURL=app_layout-pass_css_1igg3k2._.single.css.map*/

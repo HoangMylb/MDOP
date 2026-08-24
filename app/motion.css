@@ -1,0 +1,43 @@
+:root{--motion-fast:140ms;--motion-ui:240ms;--motion-editorial:620ms;--ease-precision:cubic-bezier(.16,1,.3,1);--ease-linear:cubic-bezier(.2,.7,.2,1)}
+.topbar{transition:background-color var(--motion-ui) var(--ease-precision),border-color var(--motion-ui) var(--ease-precision)}
+.button,.text-link,.utility-link,.family a,.family button,.choice-list button,.compare-tray button,.inventory-card,.inventory-meta a,.save-button{transition:transform var(--motion-fast) var(--ease-precision),background-color var(--motion-fast) linear,border-color var(--motion-fast) linear,color var(--motion-fast) linear,opacity var(--motion-fast) linear,box-shadow var(--motion-fast) linear}
+.button span[aria-hidden=true],.text-link span[aria-hidden=true],.utility-link span[aria-hidden=true],.family a span[aria-hidden=true],.family button span[aria-hidden=true],.choice-list button span[aria-hidden=true],.inventory-meta a span[aria-hidden=true]{transition:transform var(--motion-fast) var(--ease-precision)}
+.button:hover,.button:focus-visible{transform:translateY(-1px)}
+.button:active{transform:translateY(0) scale(.985)}
+.button:hover span[aria-hidden=true],.button:focus-visible span[aria-hidden=true],.text-link:hover span[aria-hidden=true],.text-link:focus-visible span[aria-hidden=true],.utility-link:hover span[aria-hidden=true],.utility-link:focus-visible span[aria-hidden=true],.family a:hover span[aria-hidden=true],.family a:focus-visible span[aria-hidden=true],.inventory-meta a:hover span[aria-hidden=true],.inventory-meta a:focus-visible span[aria-hidden=true]{transform:translate(3px,-3px)}
+.hero-image{animation:hero-vehicle-reveal var(--motion-editorial) var(--ease-precision) both;transform-origin:60% 50%}
+.hero-panel{animation:hero-panel-arrive 460ms var(--ease-precision) both}
+@keyframes hero-vehicle-reveal{from{clip-path:inset(0 0 0 6%);transform:scale(1.035)}to{clip-path:inset(0);transform:scale(1)}}
+@keyframes hero-panel-arrive{from{opacity:.01;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.family{transition:box-shadow var(--motion-ui) var(--ease-precision),filter var(--motion-ui) var(--ease-precision)}
+.family-photo{transition:transform 460ms var(--ease-precision),filter var(--motion-ui) linear!important;transform-origin:center}
+.family:hover .family-photo,.family:focus-within .family-photo,.family.is-selected .family-photo{transform:scale(1.045)}
+.family:focus-within,.family.is-selected{box-shadow:inset 0 0 0 1px rgba(244,241,235,.82)}
+.family button[aria-pressed=true]{color:#fff;text-decoration-color:var(--red);text-decoration-thickness:2px;animation:compare-choice 280ms var(--ease-precision) both}
+@keyframes compare-choice{0%{transform:translateX(0)}55%{transform:translateX(4px)}100%{transform:translateX(0)}}
+.progress i{width:100%;transform-origin:left;transition:transform var(--motion-ui) var(--ease-precision)!important}
+.finder-stage{animation:finder-forward var(--motion-ui) var(--ease-precision) both}
+.finder-stage--back{animation-name:finder-back}
+@keyframes finder-forward{from{opacity:.01;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
+@keyframes finder-back{from{opacity:.01;transform:translateX(-14px)}to{opacity:1;transform:translateX(0)}}
+.choice-list button:hover,.choice-list button:focus-visible{background:#303133;transform:translateX(3px)}
+.choice-list button:active{transform:translateX(5px)}
+.compare-tray{animation:compare-tray-enter 300ms var(--ease-precision) both;transform-origin:100% 100%}
+@keyframes compare-tray-enter{from{opacity:.01;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.compare-tray .picked{transition:background-color var(--motion-fast) linear,transform var(--motion-fast) var(--ease-precision)}
+.compare-tray .picked:hover,.compare-tray .picked:focus-visible{background:#dfdad2;transform:translateX(-2px)}
+.save-button{position:relative}
+.save-button[data-saved=true]{color:#fff;text-decoration-color:var(--red);text-decoration-thickness:2px}
+.save-button[data-saved=true]::before{content:"";width:6px;height:6px;display:inline-block;margin-right:7px;background:var(--red);transform:scale(1);animation:save-confirm var(--motion-fast) var(--ease-precision) both}
+@keyframes save-confirm{from{transform:scale(.2)}to{transform:scale(1)}}
+.inventory-photo img{transition:transform 420ms var(--ease-precision),filter var(--motion-ui) linear}
+.inventory-card:hover .inventory-photo img,.inventory-card:focus-within .inventory-photo img{transform:scale(1.035)}
+.inventory-card:focus-within{box-shadow:0 12px 28px rgba(0,0,0,.2)}
+@supports (animation-timeline:view()){
+  .featured .feature-image{animation:featured-drive linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+  @keyframes featured-drive{0%{transform:scale(1.055) translateX(1.5%)}45%,65%{transform:scale(1.015) translateX(0)}100%{transform:scale(1.04) translateX(-1%)}}
+}
+.action-notice:not(:empty){animation:notice-enter 220ms var(--ease-precision) both}
+@keyframes notice-enter{from{opacity:.01;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:850px){.hero-image{transform-origin:68% 50%}.family:hover .family-photo{transform:none}.family:focus-within .family-photo,.family.is-selected .family-photo{transform:scale(1.025)}.mobile-action a{animation:mobile-action-enter var(--motion-ui) var(--ease-precision) both}.mobile-action a:active{transform:scale(.985)}@keyframes mobile-action-enter{from{opacity:.01;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}}
+@media(prefers-reduced-motion:reduce){.hero-image,.hero-panel,.finder-stage,.compare-tray,.action-notice:not(:empty),.save-button[data-saved=true]::before,.mobile-action a{animation:none!important}.hero-image{clip-path:none!important;transform:none!important}.featured .feature-image{animation:none!important;transform:none!important}.family-photo,.inventory-photo img{transition:none!important}.button:hover,.button:focus-visible,.choice-list button:hover,.choice-list button:focus-visible,.compare-tray .picked:hover,.compare-tray .picked:focus-visible{transform:none!important}}

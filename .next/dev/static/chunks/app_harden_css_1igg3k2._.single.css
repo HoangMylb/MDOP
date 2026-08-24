@@ -1,0 +1,148 @@
+/* [project]/app/harden.css [app-client] (css) */
+.skip-link {
+  z-index: 100;
+  background: var(--paper);
+  color: var(--ink);
+  padding: 10px 14px;
+  font-size: 13px;
+  position: absolute;
+  inset: 8px auto auto 8px;
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+.saved-link {
+  align-items: center;
+  min-height: 40px;
+  font-size: 11px;
+  display: inline-flex;
+}
+
+.action-notice {
+  z-index: 30;
+  color: #0b0b0c;
+  pointer-events: none;
+  background: #f4f1eb;
+  max-width: 320px;
+  margin: 0;
+  padding: 10px 14px;
+  font-size: 12px;
+  position: fixed;
+  inset: auto 20px 20px auto;
+  box-shadow: 0 10px 25px #00000038;
+}
+
+.action-notice:empty {
+  display: none;
+}
+
+.answer-summary, .tray-help, .compare-empty {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.answer-summary {
+  color: #d9d9d9;
+}
+
+.finder-recovery, .result-actions {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  display: flex;
+}
+
+.family a, .family button {
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 0;
+  display: inline-flex;
+}
+
+.compare-tray .picked {
+  min-height: 48px;
+}
+
+.compare-empty {
+  color: #5e605f;
+  border-top: 1px solid #c5c1b9;
+  align-self: end;
+  padding-top: 20px;
+}
+
+.handoff {
+  color: #f4f1eb;
+  background: #0b0b0c;
+  align-content: center;
+  gap: 18px;
+  max-width: 760px;
+  min-height: 100svh;
+  padding: 12vw;
+  display: grid;
+}
+
+.handoff h1 {
+  margin: 0;
+  font-size: clamp(40px, 7vw, 78px);
+}
+
+.handoff p {
+  color: #c9c9c9;
+  max-width: 58ch;
+}
+
+.handoff a {
+  color: #0b0b0c;
+  background: #f4f1eb;
+  align-items: center;
+  width: max-content;
+  min-height: 48px;
+  padding: 0 16px;
+  font-weight: 700;
+  display: inline-flex;
+}
+
+@media (max-width: 850px) {
+  .family a, .family button {
+    min-height: 44px;
+    font-size: 12px;
+  }
+
+  .choice-list button {
+    min-height: 52px;
+    font-size: 14px;
+  }
+
+  .text-button {
+    min-height: 44px;
+    padding: 8px 0;
+  }
+
+  .action-notice {
+    inset: auto 14px calc(76px + env(safe-area-inset-bottom)) 14px;
+    max-width: none;
+  }
+
+  .mobile-action {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .mobile-action a {
+    align-items: center;
+    min-height: 52px;
+  }
+
+  .compare-tray .picked {
+    min-height: 52px;
+  }
+
+  .finder-recovery, .result-actions {
+    gap: 12px;
+  }
+}
+
+/*# sourceMappingURL=app_harden_css_1igg3k2._.single.css.map*/

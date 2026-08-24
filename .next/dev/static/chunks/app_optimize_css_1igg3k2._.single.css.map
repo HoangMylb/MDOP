@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/app/optimize.css"],"sourcesContent":["/* Performance pass: preserve the editorial lanes while avoiding CSS-image downloads. */\n.family-photo {\n  background-image: none !important;\n  contain: layout paint style;\n}\n\n.family-photo > img {\n  object-fit: cover;\n}\n\n/* These stations are independent, below the first decision view, and retain their intrinsic layout. */\n.inventory-card,\n.ownership-list article {\n  contain: layout paint style;\n}\n"],"names":[],"mappings":"AACA;;;;;AAKA;;;;AAKA"}}]
+}

@@ -1,0 +1,180 @@
+/* [project]/app/typeset.css [app-client] (css) */
+:root {
+  --font-exo: "Exo 2 Variable";
+  --font-display: var(--font-exo), Arial, sans-serif;
+  --font-interface: var(--font-exo), Arial, sans-serif;
+  --type-hero: clamp(2.75rem, 4.2vw, 4rem);
+  --type-section: clamp(2.25rem, 4vw, 4.25rem);
+  --type-model: clamp(1.75rem, 2vw, 2.4rem);
+  --type-feature: clamp(4.25rem, 7vw, 6.1rem);
+  --type-body: 1rem;
+  --type-body-lg: 1.0625rem;
+  --type-ui: .8125rem;
+  --type-meta: .75rem;
+  --type-status: .6875rem;
+}
+
+body {
+  font-family: var(--font-interface);
+  font-size: var(--type-body);
+  font-feature-settings: "kern" 1, "liga" 1;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+h1, h2, .feature-card h2, .family h3, .inventory-meta h3 {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+
+h1, h2 {
+  letter-spacing: -.04em;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: var(--type-hero);
+  text-wrap: balance;
+  max-inline-size: 12ch;
+  line-height: .99;
+}
+
+.hero-panel > p:not(.brand-line) {
+  font-size: var(--type-body-lg);
+  max-inline-size: 35ch;
+  line-height: 1.55;
+}
+
+.section-intro h2, .finder h2, .compare h2, .inventory h2, .ownership h2, .proof h2, .final-cta h2 {
+  font-size: var(--type-section);
+  text-wrap: balance;
+  max-inline-size: 13ch;
+  line-height: 1;
+}
+
+.family h3 {
+  font-size: var(--type-model);
+  letter-spacing: -.04em;
+  font-weight: 500;
+  line-height: .98;
+}
+
+.feature-card h2 {
+  font-size: var(--type-feature);
+  font-weight: 500;
+  line-height: .9;
+}
+
+.feature-statement {
+  font-family: var(--font-display);
+  letter-spacing: -.03em;
+  max-inline-size: 20ch;
+  font-size: clamp(1.3rem, 1.7vw, 1.75rem);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.topbar nav, .utilities, .utility-link, .text-link, .saved-link {
+  font-family: var(--font-interface);
+  font-size: var(--type-ui);
+  letter-spacing: -.02em;
+  font-weight: 500;
+}
+
+.button {
+  font-family: var(--font-interface);
+  font-size: var(--type-ui);
+  letter-spacing: -.015em;
+  font-weight: 600;
+}
+
+.button, .utility-link {
+  line-height: 1.2;
+}
+
+.overline, .brand-line {
+  font-size: var(--type-meta);
+  letter-spacing: .12em;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.family p, .family small, .inventory-meta p, .inventory-meta span, .data-note, .inventory-note, .ownership-list p, .answer-summary, .tray-help, .compare-empty {
+  font-size: var(--type-meta);
+  letter-spacing: -.01em;
+  line-height: 1.5;
+}
+
+.status {
+  font-size: var(--type-status);
+  letter-spacing: .015em;
+  opacity: .86;
+  font-weight: 600;
+}
+
+.finder-tool h3 {
+  font-family: var(--font-display);
+  letter-spacing: -.035em;
+  font-size: clamp(1.75rem, 2.4vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.choice-list button, .compare-tray button, .ownership-list h3 {
+  font-family: var(--font-interface);
+  letter-spacing: -.02em;
+  font-size: .9375rem;
+  font-weight: 500;
+}
+
+.tray-label {
+  font-size: var(--type-ui);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.015em;
+  font-weight: 600;
+}
+
+.inventory-meta h3 {
+  letter-spacing: -.035em;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.action-notice, .handoff, footer {
+  font-family: var(--font-interface);
+}
+
+@media (max-width: 850px) {
+  h1 {
+    max-inline-size: 11ch;
+    font-size: clamp(2.55rem, 11vw, 3.2rem);
+  }
+
+  .hero-panel > p:not(.brand-line) {
+    max-inline-size: 31ch;
+    font-size: 1rem;
+  }
+
+  .section-intro h2, .finder h2, .compare h2, .inventory h2, .ownership h2, .proof h2, .final-cta h2 {
+    max-inline-size: 12ch;
+    font-size: clamp(2.25rem, 10vw, 3rem);
+  }
+
+  .family h3 {
+    font-size: 2.25rem;
+  }
+
+  .feature-card h2 {
+    font-size: 4.75rem;
+  }
+
+  .family p, .inventory-meta p, .inventory-meta span, .ownership-list p {
+    font-size: .8125rem;
+  }
+
+  .status {
+    font-size: .6875rem;
+  }
+}
+
+/*# sourceMappingURL=app_typeset_css_1igg3k2._.single.css.map*/

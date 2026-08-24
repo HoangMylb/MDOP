@@ -1,0 +1,28 @@
+/* [project]/app/option-three-assets.css [app-client] (css) */
+.proof-visual {
+  background: #161718;
+  position: relative;
+  overflow: hidden;
+}
+
+.proof-visual > img {
+  object-fit: cover;
+  opacity: .76;
+}
+
+.proof-visual:after {
+  content: "";
+  background: linear-gradient(90deg, #00000024, #000000a8);
+  position: absolute;
+  inset: 0;
+}
+
+.inventory-photo {
+  background: #151617;
+}
+
+.inventory-photo img {
+  object-fit: cover;
+}
+
+/*# sourceMappingURL=app_option-three-assets_css_1igg3k2._.single.css.map*/

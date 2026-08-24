@@ -1,0 +1,15 @@
+/* Option 1 navigation and hero composition; the Drive Line body stays unchanged. */
+.topbar { height: 66px; padding: 0 2vw; background: rgba(8, 8, 9, .8); }
+.topbar nav { gap: 28px; font-size: 11px; }
+.topbar nav a { opacity: .92; }
+.utilities { gap: 23px; }
+.utilities button { display: inline-flex; align-items: center; gap: 7px; font-size: 11px; }
+.hero { align-items: start; min-height: 680px; }
+.hero:after { background: linear-gradient(90deg, rgba(4,4,4,.92) 0%, rgba(4,4,4,.58) 31%, rgba(4,4,4,.08) 72%); }
+.hero-panel { max-width: 480px; margin: 132px 0 0 3.4vw; }
+.hero-panel h1 { font-family: var(--ui); font-size: clamp(42px, 4.5vw, 64px); font-weight: 500; line-height: 1.05; letter-spacing: -.04em; }
+.hero-panel > p { font-size: 14px; }
+.hero-caption { display: none; }
+
+@media (max-width: 1050px) { .topbar nav { gap: 16px; } .topbar nav a:nth-last-child(-n+2) { display: none; } }
+@media (max-width: 850px) { .topbar { background: rgba(8,8,9,.72); } .utilities button span { display:none; } .utilities button { font-size: 18px; } .hero { align-items: end; } .hero-panel { margin: 0 20px 72px; } .hero-panel h1 { font-size: 44px; } .hero-panel > p { font-size: 13px; } }

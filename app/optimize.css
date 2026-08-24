@@ -1,0 +1,15 @@
+/* Performance pass: preserve the editorial lanes while avoiding CSS-image downloads. */
+.family-photo {
+  background-image: none !important;
+  contain: layout paint style;
+}
+
+.family-photo > img {
+  object-fit: cover;
+}
+
+/* These stations are independent, below the first decision view, and retain their intrinsic layout. */
+.inventory-card,
+.ownership-list article {
+  contain: layout paint style;
+}

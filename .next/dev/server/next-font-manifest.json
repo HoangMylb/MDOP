@@ -1,0 +1,11 @@
+{
+  "app": {
+    "[project]/app/configure/page": [],
+    "[project]/app/inventory/page": [],
+    "[project]/app/models/page": [],
+    "[project]/app/page": []
+  },
+  "appUsingSizeAdjust": false,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

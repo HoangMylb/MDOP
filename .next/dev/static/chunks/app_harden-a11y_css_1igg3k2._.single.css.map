@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/app/harden-a11y.css"],"sourcesContent":[".main-content-start{scroll-margin-top:calc(5rem + env(safe-area-inset-top));outline:none}\n.main-content-start:focus{outline:2px solid var(--red);outline-offset:-4px}\n.finder-question{min-inline-size:0;margin:0;padding:0;border:0}\n.finder-question legend{max-inline-size:24ch;margin:0 0 var(--space-3);padding:0;font-family:var(--font-display);font-size:clamp(1.75rem,2.4vw,2.35rem);font-weight:600;letter-spacing:-.03em;line-height:1.15}\n@media(max-width:850px){.main-content-start{scroll-margin-top:calc(4.5rem + env(safe-area-inset-top))}.finder-question legend{max-inline-size:18ch}}\n"],"names":[],"mappings":"AAAA;;;;;AACA;;;;;AACA;;;;;;;AACA;;;;;;;;;;;AACA;EAAwB;;;;EAA8E"}}]
+}

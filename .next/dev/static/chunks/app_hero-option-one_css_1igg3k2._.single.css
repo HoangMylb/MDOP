@@ -1,0 +1,98 @@
+/* [project]/app/hero-option-one.css [app-client] (css) */
+.topbar {
+  background: #080809cc;
+  height: 66px;
+  padding: 0 2vw;
+}
+
+.topbar nav {
+  gap: 28px;
+  font-size: 11px;
+}
+
+.topbar nav a {
+  opacity: .92;
+}
+
+.utilities {
+  gap: 23px;
+}
+
+.utilities button {
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  display: inline-flex;
+}
+
+.hero {
+  align-items: start;
+  min-height: 680px;
+}
+
+.hero:after {
+  background: linear-gradient(90deg, #040404eb 0%, #04040494 31%, #04040414 72%);
+}
+
+.hero-panel {
+  max-width: 480px;
+  margin: 132px 0 0 3.4vw;
+}
+
+.hero-panel h1 {
+  font-family: var(--ui);
+  letter-spacing: -.04em;
+  font-size: clamp(42px, 4.5vw, 64px);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.hero-panel > p {
+  font-size: 14px;
+}
+
+.hero-caption {
+  display: none;
+}
+
+@media (max-width: 1050px) {
+  .topbar nav {
+    gap: 16px;
+  }
+
+  .topbar nav a:nth-last-child(-n+2) {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .topbar {
+    background: #080809b8;
+  }
+
+  .utilities button span {
+    display: none;
+  }
+
+  .utilities button {
+    font-size: 18px;
+  }
+
+  .hero {
+    align-items: end;
+  }
+
+  .hero-panel {
+    margin: 0 20px 72px;
+  }
+
+  .hero-panel h1 {
+    font-size: 44px;
+  }
+
+  .hero-panel > p {
+    font-size: 13px;
+  }
+}
+
+/*# sourceMappingURL=app_hero-option-one_css_1igg3k2._.single.css.map*/
