@@ -11,7 +11,7 @@ self.__SERVER_FILES_MANIFEST={
     "cleanDistDir": true,
     "assetPrefix": "",
     "cacheMaxMemorySize": 52428800,
-    "configOrigin": "default",
+    "configOrigin": "next.config.mjs",
     "useFileSystemPublicRoutes": true,
     "generateEtags": true,
     "pageExtensions": [
@@ -21,7 +21,7 @@ self.__SERVER_FILES_MANIFEST={
       "js"
     ],
     "instrumentationClientInject": [],
-    "poweredByHeader": true,
+    "poweredByHeader": false,
     "compress": true,
     "images": {
       "deviceSizes": [
@@ -35,6 +35,7 @@ self.__SERVER_FILES_MANIFEST={
         3840
       ],
       "imageSizes": [
+        16,
         32,
         48,
         64,
@@ -48,8 +49,9 @@ self.__SERVER_FILES_MANIFEST={
       "loaderFile": "",
       "domains": [],
       "disableStaticImages": false,
-      "minimumCacheTTL": 14400,
+      "minimumCacheTTL": 2592000,
       "formats": [
+        "image/avif",
         "image/webp"
       ],
       "maximumRedirects": 3,
@@ -105,7 +107,7 @@ self.__SERVER_FILES_MANIFEST={
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "/Users/my/Desktop/CaseStudy/DEV/MDOP",
+    "outputFileTracingRoot": "/Users/my/Documents/GitHub/MDOP",
     "enablePrerenderSourceMaps": true,
     "cacheComponents": false,
     "cacheLife": {
@@ -233,7 +235,6 @@ self.__SERVER_FILES_MANIFEST={
       "turbopackInferModuleSideEffects": true,
       "turbopackPluginRuntimeStrategy": "childProcesses",
       "turbopackMemoryEvictionMode": "auto",
-      "middlewarePrefetch": "flexible",
       "optimizePackageImports": [
         "lucide-react",
         "date-fns",
@@ -320,14 +321,14 @@ self.__SERVER_FILES_MANIFEST={
     },
     "htmlLimitedBots": "[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight",
     "bundlePagesRouterDependencies": false,
-    "configFileName": "next.config.js",
-    "repoRoot": "/Users/my/Desktop/CaseStudy/DEV/MDOP",
+    "configFileName": "next.config.mjs",
+    "repoRoot": "/Users/my/Documents/GitHub/MDOP",
     "turbopack": {
-      "root": "/Users/my/Desktop/CaseStudy/DEV/MDOP"
+      "root": "/Users/my/Documents/GitHub/MDOP"
     },
     "distDirRoot": ".next"
   },
-  "appDir": "/Users/my/Desktop/CaseStudy/DEV/MDOP",
+  "appDir": "/Users/my/Documents/GitHub/MDOP",
   "relativeAppDir": "",
   "files": [
     ".next/package.json",

@@ -55,6 +55,7 @@ export default function Home({ confidence }: Readonly<{ confidence: ReactNode }>
   const [introLogoLeaving, setIntroLogoLeaving] = useState(false);
   const [introLeaving, setIntroLeaving] = useState(false);
   const [introDone, setIntroDone] = useState(false);
+  const [introVisible, setIntroVisible] = useState(true);
   const [isFinalCtaInView, setIsFinalCtaInView] = useState(false);
   const [hydrated, setHydrated] = useState(false);
 
@@ -70,13 +71,22 @@ export default function Home({ confidence }: Readonly<{ confidence: ReactNode }>
   useEffect(() => { if (hydrated) writeStoredModels("mdop-saved", saved); }, [saved, hydrated]);
 
   useEffect(() => {
-    const hideLogo = window.setTimeout(() => setIntroLogoLeaving(true), 1000);
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const frame = requestAnimationFrame(() => {
+        setIntroDone(true);
+        setIntroVisible(false);
+      });
+      return () => cancelAnimationFrame(frame);
+    }
+    const hideLogo = window.setTimeout(() => setIntroLogoLeaving(true), 900);
+    const fadeOverlay = window.setTimeout(() => setIntroLeaving(true), 1150);
     const finish = window.setTimeout(() => {
-      setIntroLeaving(true);
       setIntroDone(true);
-    }, 1320);
+      setIntroVisible(false);
+    }, 1400);
     return () => {
       window.clearTimeout(hideLogo);
+      window.clearTimeout(fadeOverlay);
       window.clearTimeout(finish);
     };
   }, []);
@@ -223,15 +233,13 @@ export default function Home({ confidence }: Readonly<{ confidence: ReactNode }>
 
   return (
     <>
-      {!introDone && (
+      {introVisible && (
         <div className={`brand-intro${introLogoLeaving ? " brand-intro--logo-leaving" : ""}${introLeaving ? " brand-intro--leaving" : ""}`} aria-hidden="true">
           <span>MDOP</span>
         </div>
       )}
-      {introDone && (
-        <>
-          <a className="skip-link" href="#content" onClick={focusSkippedContent}>Skip to content</a>
-          <header ref={headerRef} className={`topbar${headerVisible ? "" : " topbar--hidden"}`}>
+      <a className="skip-link" href="#content" onClick={focusSkippedContent}>Skip to content</a>
+      <header ref={headerRef} className={`topbar${headerVisible ? "" : " topbar--hidden"}`}>
         <Link className="wordmark" href="/" aria-label="MDOP homepage">MDOP</Link>
         <nav aria-label="Main navigation">
           <a href="#families">Models</a>
@@ -315,7 +323,7 @@ export default function Home({ confidence }: Readonly<{ confidence: ReactNode }>
             <div className="finder-overview">
               <div className="finder-lead">
                 <h2 id="finder-title"><span>Find the car</span><span>that fits you</span></h2>
-                <p>Answer a few quick questions and we'll suggest the model line that best fits your lifestyle.</p>
+                <p>Answer a few quick questions and we&apos;ll suggest the model line that best fits your lifestyle.</p>
                 <button type="button" className="finder-start" onClick={() => setFinderStarted(true)}>Get Started</button>
               </div>
               <div className="finder-preference"><PersonIcon /><span>What is your priority?</span><strong>Performance</strong></div>
@@ -500,8 +508,6 @@ export default function Home({ confidence }: Readonly<{ confidence: ReactNode }>
         <div className="mobile-action">
           <Link key={mobileAction.label} href={mobileAction.href}>{mobileAction.label} <Arrow /></Link>
         </div>
-      )}
-        </>
       )}
     </>
   );

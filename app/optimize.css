@@ -1,4 +1,15 @@
 /* Performance pass: preserve the editorial lanes while avoiding CSS-image downloads. */
+.hero {
+  contain: layout paint;
+  position: relative;
+}
+
+.hero-image {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
 .family-photo {
   background-image: none !important;
   contain: layout paint style;
