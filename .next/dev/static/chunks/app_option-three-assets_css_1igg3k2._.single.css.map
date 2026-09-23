@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/app/option-three-assets.css"],"sourcesContent":["/* Direct crops from the user-selected Option 3 comp. Product lanes now use Next's responsive image pipeline. */\n.proof-visual { position: relative; overflow: hidden; background: #161718; }\n.proof-visual > img { object-fit: cover; opacity: .76; }\n.proof-visual::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(0,0,0,.14), rgba(0,0,0,.66)); }\n.inventory-photo { background: #151617; }\n.inventory-photo img { object-fit: cover; }\n"],"names":[],"mappings":"AACA;;;;;;AACA;;;;;AACA;;;;;;;AACA;;;;AACA"}}]
-}

@@ -1,6 +1,0 @@
-{
-  "/configure/page": "app/configure/page.js",
-  "/inventory/page": "app/inventory/page.js",
-  "/models/page": "app/models/page.js",
-  "/page": "app/page.js"
-}
