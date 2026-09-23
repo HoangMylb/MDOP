@@ -94,8 +94,8 @@ MDOP/
 git clone https://github.com/HoangMylb/MDOP.git
 cd MDOP
 
-# Cài đặt các gói phụ thuộc
-npm install
+# Cài đặt chính xác dependency lockfile
+npm ci
 ```
 
 ### 3. Chạy ở môi trường phát triển (Development)
@@ -111,6 +111,10 @@ Mở trình duyệt và truy cập [http://localhost:3000](http://localhost:3000
 ```bash
 # Kiểm tra linting
 npm run lint
+
+# Kiểm tra TypeScript và behavior của state persistence
+npm run typecheck
+npm run test
 
 # Tạo bản build tối ưu
 npm run build
@@ -137,6 +141,24 @@ Dự án áp dụng phong cách thiết kế phân tầng CSS tinh gọn và chu
 - `adapt.css` & `layout-pass.css`: Xử lý breakpoint linh hoạt cho mobile, tablet và desktop.
 - `colorize.css` & `polish.css`: Tinh chỉnh độ tương phản, dark mode và viền tương tác sắc nét.
 - `harden-a11y.css`: Hỗ trợ focus states, accessibility contrast và reduced-motion.
+
+## Engineering decisions
+
+### State management & persistence
+
+Interaction state is intentionally local to the client: saved models and the comparison tray are persisted in `localStorage`, with malformed or unknown values discarded before rendering. The pure selection rules live in `app/_lib/model-selection.ts`; this keeps the large animated home component focused on UI orchestration and makes the behavior testable without a browser.
+
+### Accessibility
+
+The homepage includes a skip link, semantic buttons for interactive controls, keyboard focus recovery after comparison removal, and a `prefers-reduced-motion` path that bypasses the intro and GSAP motion. These controls are not merely visual affordances—the interaction remains usable when motion is reduced.
+
+### Testing & CI
+
+Vitest covers persistence sanitisation and comparison behavior (add, remove, and the three-model limit). GitHub Actions runs `npm ci`, lint, TypeScript checking, tests, and a production build on pull requests and protected branches.
+
+### Performance & trade-offs
+
+The project uses Next.js `Image` for the image-heavy discovery experience and avoids reading browser storage until hydration. GSAP is retained because animation is part of the design study; it is gated for reduced-motion users. The compare and saved routes currently communicate prototype scope rather than duplicating the homepage state into a larger data layer—an intentional scope boundary for this portfolio study.
 
 ---
 

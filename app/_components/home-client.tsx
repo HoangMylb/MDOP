@@ -7,6 +7,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type KeyboardEvent, type MouseEvent, type ReactNode } from "react";
 import { siFacebook, siInstagram, siTiktok } from "simple-icons/icons";
 import { ArrowUpRightIcon, CarIcon, FlagIcon, PersonIcon, RoadIcon, SearchIcon, SeatIcon } from "./icons";
+import { MAX_COMPARE_MODELS, MODEL_NAMES, sanitizeStoredModels, toggleComparison } from "../_lib/model-selection";
 
 const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
@@ -27,15 +28,14 @@ const questions = [
 
 const familyImages = ["/images/v2/family-911.png", "/images/v2/family-taycan.png", "/images/v2/family-macan.png", "/images/v2/family-cayenne.png", "/images/v2/family-panamera.png", "/images/v2/family-718.png"] as const;
 const inventoryImages = ["/images/v2/inventory-911.png", "/images/v2/inventory-taycan.png", "/images/v2/inventory-macan.png", "/images/v2/inventory-cayenne.png"];
-const persistentModelNames: ReadonlySet<string> = new Set(families.map(([name]) => name));
+const persistentModelNames: ReadonlySet<string> = new Set(MODEL_NAMES);
 const slug = (model: string) => model.toLowerCase().replaceAll(" ", "-");
 
 function readStoredModels(key: string, maximum: number) {
   try {
     const value = window.localStorage.getItem(key);
     const parsed: unknown = value ? JSON.parse(value) : [];
-    if (!Array.isArray(parsed)) return [];
-    return [...new Set(parsed.filter((model): model is string => typeof model === "string" && persistentModelNames.has(model)))].slice(0, maximum);
+    return sanitizeStoredModels(parsed, maximum);
   } catch { return []; }
 }
 function writeStoredModels(key: string, models: string[]) { try { window.localStorage.setItem(key, JSON.stringify(models)); } catch { /* Storage is an optional convenience. */ } }
@@ -66,7 +66,7 @@ export default function Home({ confidence }: Readonly<{ confidence: ReactNode }>
   const compareTrayRef = useRef<HTMLDivElement>(null);
   const compareKeyboardRemoval = useRef(false);
 
-  useEffect(() => { const frame = requestAnimationFrame(() => { setCompare(readStoredModels("mdop-compare", 3)); setSaved(readStoredModels("mdop-saved", persistentModelNames.size)); setHydrated(true); }); return () => cancelAnimationFrame(frame); }, []);
+  useEffect(() => { const frame = requestAnimationFrame(() => { setCompare(readStoredModels("mdop-compare", MAX_COMPARE_MODELS)); setSaved(readStoredModels("mdop-saved", persistentModelNames.size)); setHydrated(true); }); return () => cancelAnimationFrame(frame); }, []);
   useEffect(() => { if (hydrated) writeStoredModels("mdop-compare", compare); }, [compare, hydrated]);
   useEffect(() => { if (hydrated) writeStoredModels("mdop-saved", saved); }, [saved, hydrated]);
 
@@ -198,17 +198,18 @@ export default function Home({ confidence }: Readonly<{ confidence: ReactNode }>
   };
 
   const addCompare = (model: string) => setCompare((old) => {
-    if (old.includes(model)) {
+    const result = toggleComparison(old, model);
+    if (result.outcome === "removed") {
       setNotice(`Removed ${model} from comparison.`);
-      return old.filter((item) => item !== model);
+      return result.models;
     }
-    if (old.length === 3) {
+    if (result.outcome === "limit-reached") {
       setNotice("You can compare up to 3 models.");
-      return old;
+      return result.models;
     }
     setSelectedModel(model);
     setNotice(`Added ${model} to comparison.`);
-    return [...old, model];
+    return result.models;
   });
 
   const removeCompare = (model: string) => setCompare((old) => {
@@ -512,4 +513,3 @@ export default function Home({ confidence }: Readonly<{ confidence: ReactNode }>
     </>
   );
 }
-
