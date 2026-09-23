@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///Users/my/Desktop/CaseStudy/DEV/MDOP/app/_components/prototype-handoff.tsx"],"sourcesContent":["import Link from \"next/link\";\n\nexport function PrototypeHandoff({ title, body, back = \"/\" }: { title: string; body: string; back?: string }) {\n  return <main className=\"handoff\"><p>MDOP · Prototype</p><h1>{title}</h1><p>{body}</p><Link href={back}>Back to homepage</Link></main>;\n}\n"],"names":["PrototypeHandoff","title","body","back","className","href"],"mappings":";;;;;AAAA;;;AAEO,SAASA,iBAAiB,EAAEC,KAAK,EAAEC,IAAI,EAAEC,OAAO,GAAG,EAAkD;IAC1G,qBAAO,8OAAC;QAAKC,WAAU;;0BAAU,8OAAC;0BAAE;;;;;;0BAAoB,8OAAC;0BAAIH;;;;;;0BAAW,8OAAC;0BAAGC;;;;;;0BAAS,8OAAC,0LAAI;gBAACG,MAAMF;0BAAM;;;;;;;;;;;;AACzG"}},
-    {"offset": {"line": 62, "column": 0}, "map": {"version":3,"sources":["file:///Users/my/Desktop/CaseStudy/DEV/MDOP/app/models/page.tsx"],"sourcesContent":["import { PrototypeHandoff } from \"../_components/prototype-handoff\";\nexport default function Models() { return <PrototypeHandoff title=\"Explore Model Lines\" body=\"You are at the model discovery entry point. Models selected from the homepage continue here.\" />; }\n"],"names":["Models","title","body"],"mappings":";;;;;AAAA;;;AACe,SAASA;IAAW,qBAAO,8OAAC,+JAAgB;QAACC,OAAM;QAAsBC,MAAK;;;;;;AAAmG"}}]
-}

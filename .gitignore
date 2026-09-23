@@ -48,3 +48,11 @@ next-env.d.ts.bak
 *.njsproj
 *.sln
 *.sw?
+
+# Local AI/development tooling and generated review material
+/.agents/
+/.codex/
+/.impeccable/
+AGENTS.md
+CLAUDE.md
+MDOP_DESIGN_SKILL.md
