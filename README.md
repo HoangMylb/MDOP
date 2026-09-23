@@ -121,7 +121,9 @@ npm run start
 
 ### Live demo
 
-No public deployment is currently configured. Run the project locally using the steps above.
+[Explore MDOP live](https://mdop-indol.vercel.app/)
+
+This deployment is provided for portfolio review. MDOP is a product study and does not process real vehicle purchases, reservations, or commercial transactions.
 
 ---
 
