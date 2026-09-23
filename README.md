@@ -1,6 +1,6 @@
-# 🏁 MDOP — Make Dreams. Own Porsche.
+# 🏁 MDOP — Automotive Discovery & Configuration Product Study
 
-> **Trải nghiệm khám phá, đánh giá và cấu hình xe Porsche cao cấp dành cho thị trường Việt Nam.**
+> A portfolio product study for exploring, comparing and configuring premium vehicles for a Vietnam-focused audience.
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.3.1-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2.4-61dafb?style=flat-square&logo=react)](https://react.js.org/)
@@ -12,7 +12,7 @@
 
 ## 📖 Giới thiệu (Overview)
 
-**MDOP (Make Dreams. Own Porsche.)** là một sản phẩm Design Study / Automotive Commerce Interface được thiết kế với chuẩn mực thẩm mỹ và độ hoàn thiện cao nhất của Porsche. Dự án biến ước mơ sở hữu xe thể thao hạng sang thành các bước hành động cụ thể cho khách hàng tại Việt Nam thông qua phễu chuyển đổi:
+**MDOP (Make Dreams. Own Porsche.)** is a design study / automotive-commerce interface. It demonstrates a discovery-to-intent flow for a premium-vehicle product concept and is not affiliated with Porsche or a vehicle retailer.
 
 $$\textbf{DESIRE} \longrightarrow \textbf{DISCOVERY} \longrightarrow \textbf{EVALUATION} \longrightarrow \textbf{CONFIDENCE} \longrightarrow \textbf{INTENT} \longrightarrow \textbf{ACTION}$$
 
@@ -118,6 +118,10 @@ npm run build
 # Khởi chạy server production
 npm run start
 ```
+
+### Live demo
+
+No public deployment is currently configured. Run the project locally using the steps above.
 
 ---
 
